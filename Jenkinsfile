@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 pipeline{ 
-    def loadimage() { 
+    stage('Image Load'){ def loadimage() { 
         sh'''
         #!/bin/bash
         docker load -i webdeploy.sheetesh.tar '''
-    }
+    }}
     
     agent{ 
         docker {
