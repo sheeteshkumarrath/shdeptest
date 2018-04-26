@@ -4,7 +4,7 @@ pipeline{
         docker {
             //Run the Docker image and create Docker Container to perform the Pipeline activities
             image 'ubuntu'
-            args '-u sheeteshubuntu'
+            args '-u root'
                 }
           }    
     stages{
