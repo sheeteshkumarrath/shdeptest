@@ -4,7 +4,7 @@ pipeline{
      //   sh'''
         //#!/bin/bash
         //docker load -i webdeploy.sheetesh.tar '''
-    }}
+    //}}
     
     agent{ 
         docker {
