@@ -1,9 +1,10 @@
 #!/usr/bin/env groovy
-pipeline{
+pipeline{ 
+    sh 'docker load -i webdeploy.sheetesh.tar'
     agent{
         docker {
             //Run the Docker image and create Docker Container to perform the Pipeline activities
-            image 'ubuntu'
+            image 'webdeploy:sheetesh'
             args '-u root'
                 }
           }    
@@ -11,10 +12,10 @@ pipeline{
     stage('Build') {      
         steps {
                 echo 'Building...'
-                 sh 'apt-get update'
-                 sh 'Yes y | apt-get inatall ssh'
-                 sh 'apt-get install -y git'
-                 sh 'apt-get install sudo'
+                 //sh 'apt-get update'
+                 //sh 'Yes y | apt-get inatall ssh'
+                 //sh 'apt-get install -y git'
+                 //sh 'apt-get install sudo'
                  sh 'chmod 700 Devnew.pem'    
                  sh 'chmod +x ./script/deploy'
               }
