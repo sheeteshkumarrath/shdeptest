@@ -3,7 +3,7 @@ pipeline{
     def loadimage() { 
         sh'''
         #!/bin/bash
-        docker load -i webdeploy.sheetesh.tar
+        docker load -i webdeploy.sheetesh.tar '''
     }
     
     agent{ 
