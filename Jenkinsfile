@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+RUN docker load -i webdeploy.sheetesh.tar
 pipeline{ 
    // stage('Image Load'){ def loadimage() { 
      //   sh'''
@@ -9,11 +10,7 @@ pipeline{
     agent{ 
         docker {
             //Run the Docker image and create Docker Container to perform the Pipeline activities
-            sh'''
-        #!/bin/bash
-        docker load -i webdeploy.sheetesh.tar
-        docker run -it webdeploy:sheetesh'''
-          //  image 'webdeploy:sheetesh'
+            image 'webdeploy:sheetesh'
             args '-u root'
                 }
           }    
