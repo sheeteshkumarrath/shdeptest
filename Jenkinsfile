@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+#!/usr/bin/bash
 pipeline{ 
    // stage('Image Load'){ def loadimage() { 
      //   sh'''
