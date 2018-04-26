@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 pipeline{ 
     
-    agent{ sh 'docker load -i webdeploy.sheetesh.tar'
+    agent{ docker load -i webdeploy.sheetesh.tar
         docker {
             //Run the Docker image and create Docker Container to perform the Pipeline activities
             image 'webdeploy:sheetesh'
