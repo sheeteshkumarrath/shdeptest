@@ -1,15 +1,19 @@
 #!/usr/bin/env groovy
 pipeline{ 
-    stage('Image Load'){ def loadimage() { 
-        sh'''
-        #!/bin/bash
-        docker load -i webdeploy.sheetesh.tar '''
+   // stage('Image Load'){ def loadimage() { 
+     //   sh'''
+        //#!/bin/bash
+        //docker load -i webdeploy.sheetesh.tar '''
     }}
     
     agent{ 
         docker {
             //Run the Docker image and create Docker Container to perform the Pipeline activities
-            image 'webdeploy:sheetesh'
+            sh'''
+        #!/bin/bash
+        docker load -i webdeploy.sheetesh.tar
+        docker run -it webdeploy:sheetesh'''
+          //  image 'webdeploy:sheetesh'
             args '-u root'
                 }
           }    
