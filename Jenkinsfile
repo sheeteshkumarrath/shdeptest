@@ -12,7 +12,7 @@ pipeline{
         steps {
                 echo 'Building...'
                  sh 'apt-get update'
-                 sh 'apt-get inatall -y ssh'
+                 sh 'Yes y | apt-get inatall ssh'
                  sh 'apt-get install -y git'
                  sh 'apt-get install sudo'
                  sh 'chmod 700 Devnew.pem'    
